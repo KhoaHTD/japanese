@@ -1,0 +1,1 @@
+Warning: This web is completed with 80% vibe code by コアさん =))))

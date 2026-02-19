@@ -179,6 +179,7 @@
       cursor: pointer;
       perspective: 1000px;
       height: 192px;
+      /* Remove relative/group behavior that might interfere if manually handled */
     }
 
     .flashcard-inner {
@@ -187,6 +188,7 @@
       height: 100%;
       transition: transform 0.5s;
       transform-style: preserve-3d;
+      /* Ensure full size is maintained during flip */
     }
 
     .flashcard.flipped .flashcard-inner {
@@ -196,6 +198,7 @@
     .flashcard-front,
     .flashcard-back {
       position: absolute;
+      inset: 0; /* Tailwind inset-0 */
       width: 100%;
       height: 100%;
       display: flex;
@@ -205,52 +208,54 @@
       padding: 24px;
       border-radius: 12px;
       border: 2px solid;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s; /* Add hover transition */
     }
 
     .flashcard-front {
       background-color: white;
-      border-color: #dbeafe;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border-color: #dbeafe; /* border-blue-100 */
     }
 
-    .flashcard-front:hover {
-      border-color: #93c5fd;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Hover effect for front card */
+    .flashcard:hover .flashcard-front {
+      border-color: #93c5fd; /* border-blue-300 */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
     }
 
     .flashcard-back {
-      background-color: #f0f9ff;
-      border-color: #bfdbfe;
+      background-color: #eff6ff; /* bg-blue-50 */
+      border-color: #bfdbfe; /* border-blue-200 */
       transform: rotateY(180deg);
     }
 
     .kanji {
-      font-size: 36px;
-      font-weight: bold;
-      color: #1f2937;
+      font-size: 36px; /* text-4xl */
+      font-weight: 700; /* font-bold */
+      color: #1f2937; /* text-gray-800 */
       text-align: center;
     }
 
     .kana {
-      font-size: 20px;
-      font-weight: 500;
-      color: #2563eb;
-      margin-top: 8px;
+      font-size: 20px; /* text-xl */
+      font-weight: 500; /* font-medium */
+      color: #2563eb; /* text-blue-600 */
+      margin-top: 8px; /* mt-2 */
       text-align: center;
     }
 
     .hint {
-      margin-top: 16px;
-      font-size: 12px;
-      color: #9ca3af;
+      margin-top: 16px; /* mt-4 */
+      font-size: 14px; /* text-sm */
+      color: #9ca3af; /* text-gray-400 */
     }
 
     .meaning {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1f2937;
+      font-size: 24px; /* text-2xl */
+      font-weight: 700; /* font-bold */
+      color: #1f2937; /* text-gray-800 */
       text-align: center;
     }
 
@@ -273,50 +278,69 @@
     }
 
     .matching-btn {
-      padding: 16px;
-      border-radius: 12px;
-      border: 2px solid;
-      font-weight: 500;
+      padding: 16px; /* p-4 */
+      border-radius: 12px; /* rounded-xl */
+      border: 2px solid; /* border-2 */
+      font-weight: 500; /* font-medium */
+      font-size: 16px;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s; /* transition-all duration-200 */
       background-color: white;
-      border-color: #e5e7eb;
-      color: #374151;
+      border-color: #e5e7eb; /* border-gray-200 */
+      color: #374151; /* text-gray-700 */
+    }
+    
+    /* Cột tiếng Nhật font to hơn một chút giống bản gốc */
+    #jp-words .matching-btn {
+        font-size: 18px; /* text-lg */
     }
 
-    .matching-btn:hover:not(:disabled) {
-      border-color: #60a5fa;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .matching-btn:hover:not(:disabled):not(.selected):not(.error) {
+      border-color: #60a5fa; /* hover:border-blue-400 */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* hover:shadow-md */
     }
 
     .matching-btn.selected {
-      background-color: #3b82f6;
-      border-color: #1d4ed8;
-      color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background-color: #3b82f6; /* bg-blue-500 */
+      border-color: #2563eb; /* border-blue-600 */
+      color: white; /* text-white */
+      box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* shadow-inner */
     }
 
     .matching-btn.matched {
-      background-color: #f0fdf4;
-      border-color: #86efac;
-      color: #15803d;
-      opacity: 0.5;
+      background-color: #dcfce7; /* bg-green-100 */
+      border-color: #86efac; /* border-green-300 */
+      color: #15803d; /* text-green-700 */
+      opacity: 0.5; /* opacity-50 */
       cursor: not-allowed;
+      box-shadow: none; /* shadow-none */
+    }
+
+    .matching-btn.error {
+      background-color: #fee2e2; /* bg-red-100 */
+      border-color: #f87171; /* border-red-400 */
+      color: #b91c1c; /* text-red-700 */
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* animate-pulse */
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .5; }
     }
 
     .completion-box {
       margin-bottom: 24px;
       padding: 24px;
-      background-color: #f0fdf4;
-      border: 1px solid #bbf7d0;
+      background-color: #f0fdf4; /* bg-green-50 */
+      border: 1px solid #bbf7d0; /* border-green-200 */
       border-radius: 12px;
       text-align: center;
-      animation: pulse 1s infinite;
+      animation: bounce-short 1s; /* animate-bounce-short equivalent */
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
+    @keyframes bounce-short {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10%); }
     }
 
     .completion-icon {
@@ -345,8 +369,8 @@
 <body>
   <div class="container">
     <header>
-      <h1>Học Từ Vựng Tiếng Nhật</h1>
-      <p class="subtitle">Chủ đề: Kế hoạch du lịch & Chuẩn bị du lịch</p>
+      <h1>Từ vựng bài 5</h1>
+      <p class="subtitle">Vibe coded by コア</p>
     </header>
 
     <div class="group-buttons" id="group-buttons"></div>
@@ -364,7 +388,7 @@
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 3h18v2H3V3zm0 16h18v2H3v-2zm0-5h18v2H3v-2z"></path>
           </svg>
-          Game Ghép từ
+          Ghép từ
         </button>
       </div>
     </div>

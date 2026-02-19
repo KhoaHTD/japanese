@@ -107,7 +107,8 @@ let appState = {
     selectedJp: null,
     selectedVn: null,
     matchedIds: [],
-    isComplete: false
+    isComplete: false,
+    errorIds: { jp: null, vn: null } // Added error state
   }
 };
 
@@ -116,6 +117,14 @@ function renderFlashcards() {
   const currentData = vocabularyData.find(g => g.id === appState.activeGroup);
   const container = document.getElementById('main-content');
   
+  // Check if we already rendered the flashcards structure to avoid full re-render
+  const existingGrid = document.querySelector('.flashcard-grid');
+  if (existingGrid && container.querySelector('.info-box')) {
+     // If grid exists, we might not need to do anything if we handle toggles separately
+     // But if group changed, we need to re-render.
+     // For now, let's keep the full render for group changes, but modify toggle.
+  }
+
   let html = `
     <div class="info-box">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -127,9 +136,10 @@ function renderFlashcards() {
   `;
   
   currentData.words.forEach(word => {
+    // Initial render state
     const isFlipped = appState.flashcards.flipped[word.id];
     html += `
-      <div class="flashcard ${isFlipped ? 'flipped' : ''}" onclick="toggleFlashcard('${word.id}')">
+      <div id="card-${word.id}" class="flashcard ${isFlipped ? 'flipped' : ''}" onclick="toggleFlashcard('${word.id}')">
         <div class="flashcard-inner">
           <div class="flashcard-front">
             <span class="kanji">${word.kanji}</span>
@@ -150,8 +160,18 @@ function renderFlashcards() {
 
 // Toggle flashcard flip
 function toggleFlashcard(wordId) {
+  // Update state
   appState.flashcards.flipped[wordId] = !appState.flashcards.flipped[wordId];
-  renderFlashcards();
+  
+  // Update DOM directly to preserve transition
+  const card = document.getElementById(`card-${wordId}`);
+  if (card) {
+    if (appState.flashcards.flipped[wordId]) {
+      card.classList.add('flipped');
+    } else {
+      card.classList.remove('flipped');
+    }
+  }
 }
 
 // Render matching game
@@ -233,20 +253,38 @@ function renderMatching() {
 function getMatchingBtnClass(id, type) {
   const isMatched = appState.matching.matchedIds.includes(id);
   const isSelected = type === 'jp' ? appState.matching.selectedJp === id : appState.matching.selectedVn === id;
+  const isError = type === 'jp' ? appState.matching.errorIds.jp === id : appState.matching.errorIds.vn === id;
   
   if (isMatched) return 'matched';
+  if (isError) return 'error'; // We need to add .error style in CSS (or use existing red style logic)
   if (isSelected) return 'selected';
   return '';
 }
 
 function selectJpWord(id) {
+  // Prevent selecting if already matched or currently showing error
+  if (appState.matching.matchedIds.includes(id) || appState.matching.errorIds.jp) return;
+  
   appState.matching.selectedJp = id;
-  checkMatch();
+  renderMatching(); // Update UI immediately
+  
+  // Use a small timeout to allow UI to update before checking match
+  // This ensures the second button turns blue before the check logic runs
+  if (appState.matching.selectedVn) {
+      setTimeout(checkMatch, 50);
+  }
 }
 
 function selectVnWord(id) {
+  // Prevent selecting if already matched or currently showing error
+  if (appState.matching.matchedIds.includes(id) || appState.matching.errorIds.vn) return;
+  
   appState.matching.selectedVn = id;
-  checkMatch();
+  renderMatching(); // Update UI immediately
+
+  if (appState.matching.selectedJp) {
+      setTimeout(checkMatch, 50);
+  }
 }
 
 function checkMatch() {
@@ -260,13 +298,23 @@ function checkMatch() {
       if (appState.matching.matchedIds.length === currentData.words.length) {
         appState.matching.isComplete = true;
       }
+      renderMatching();
     } else {
+      // Set error state
+      appState.matching.errorIds = {
+        jp: appState.matching.selectedJp,
+        vn: appState.matching.selectedVn
+      };
+      renderMatching(); // Show error colors
+
+      // Clear after delay
       setTimeout(() => {
         appState.matching.selectedJp = null;
         appState.matching.selectedVn = null;
+        appState.matching.errorIds = { jp: null, vn: null };
+        renderMatching(); // Restore UI
       }, 600);
     }
-    renderMatching();
   }
 }
 
@@ -277,6 +325,7 @@ function resetMatching() {
   appState.matching.selectedJp = null;
   appState.matching.selectedVn = null;
   appState.matching.matchedIds = [];
+  appState.matching.errorIds = { jp: null, vn: null };
   appState.matching.isComplete = false;
   renderMatching();
 }

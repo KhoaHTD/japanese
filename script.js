@@ -234,7 +234,26 @@ function renderMatching() {
     btn.onclick = () => selectJpWord(word.id);
     btn.className = 'matching-btn ' + getMatchingBtnClass(word.id, 'jp');
     btn.disabled = appState.matching.matchedIds.includes(word.id);
-    btn.textContent = word.kanji;
+    // Structure: Kanji + Kana subtitle
+    const kanjiSpan = document.createElement('span');
+    kanjiSpan.className = 'matching-kanji';
+    kanjiSpan.textContent = word.kanji;
+    
+    const kanaSpan = document.createElement('span');
+    kanaSpan.className = 'matching-kana';
+    kanaSpan.textContent = word.kana;
+    
+    // Update kana color logic based on state
+    if (appState.matching.matchedIds.includes(word.id)) {
+        kanaSpan.classList.add('text-green-600');
+    } else if (appState.matching.selectedJp === word.id) {
+        kanaSpan.classList.add('text-blue-200');
+    } else {
+        kanaSpan.classList.add('text-gray-500');
+    }
+
+    btn.appendChild(kanjiSpan);
+    btn.appendChild(kanaSpan);
     jpContainer.appendChild(btn);
   });
   
@@ -243,7 +262,7 @@ function renderMatching() {
   appState.matching.vnWords.forEach(word => {
     const btn = document.createElement('button');
     btn.onclick = () => selectVnWord(word.id);
-    btn.className = 'matching-btn ' + getMatchingBtnClass(word.id, 'vn');
+    btn.className = 'matching-btn center-content ' + getMatchingBtnClass(word.id, 'vn');
     btn.disabled = appState.matching.matchedIds.includes(word.id);
     btn.textContent = word.vi;
     vnContainer.appendChild(btn);

@@ -81,6 +81,101 @@ const vocabularyData = [
       { id: '5-11', kanji: 'コピー・する', kana: 'こぴー・する', vi: 'photo' },
       { id: '5-12', kanji: 'お願いします', kana: 'おねがいします', vi: 'nhờ vả' }
     ]
+  },
+  {
+    id: 6,
+    title: "Nhóm 6 (Bài 7)",
+    words: [
+      { id: '6-1', kanji: '会議', kana: 'かいぎ', vi: 'buổi họp, hội nghị' },
+      { id: '6-2', kanji: '課長', kana: 'かちょう', vi: 'trưởng nhóm' },
+      { id: '6-3', kanji: '社長', kana: 'しゃちょう', vi: 'giám đốc' },
+      { id: '6-4', kanji: 'ご存じ', kana: 'ごぞんじ', vi: 'biết (kính ngữ)' },
+      { id: '6-5', kanji: 'どなた', kana: 'どなた', vi: 'vị nào (kính ngữ của 誰)' },
+      { id: '6-6', kanji: 'ミステリー', kana: 'みすてりー', vi: 'bí ẩn, trinh thám' },
+      { id: '6-7', kanji: '出身', kana: 'しゅっしん', vi: 'xuất thân, quê quán' },
+      { id: '6-8', kanji: 'ごろ', kana: 'ごろ', vi: 'khoảng (thời gian)' },
+      { id: '6-9', kanji: 'いらっしゃる', kana: 'いらっしゃる', vi: 'đi, đến, ở (kính ngữ)' },
+      { id: '6-10', kanji: 'おっしゃる', kana: 'おっしゃる', vi: 'nói (kính ngữ)' }
+    ]
+  },
+  {
+    id: 7,
+    title: "Nhóm 7 (Bài 7)",
+    words: [
+      { id: '7-1', kanji: 'ご覧になる', kana: 'ごらんになる', vi: 'nhìn, xem (kính ngữ)' },
+      { id: '7-2', kanji: 'なさる', kana: 'なさる', vi: 'làm (kính ngữ)' },
+      { id: '7-3', kanji: '召し上がる', kana: 'めしあがる', vi: 'ăn, uống (kính ngữ)' },
+      { id: '7-4', kanji: '出席・する', kana: 'しゅっせき・する', vi: 'tham dự' },
+      { id: '7-5', kanji: '退院・する', kana: 'たいいん・する', vi: 'xuất viện' },
+      { id: '7-6', kanji: 'このくらい', kana: 'このくらい', vi: 'khoảng chừng này' },
+      { id: '7-7', kanji: '皮', kana: 'かわ', vi: 'da, vỏ' },
+      { id: '7-8', kanji: 'キャベツ', kana: 'きゃべつ', vi: 'bắp cải' },
+      { id: '7-9', kanji: 'ジャガイモ', kana: 'じゃがいも', vi: 'khoai tây' },
+      { id: '7-10', kanji: '大根', kana: 'だいこん', vi: 'củ cải' }
+    ]
+  },
+  {
+    id: 8,
+    title: "Nhóm 8 (Bài 7)",
+    words: [
+      { id: '8-1', kanji: 'タマネギ', kana: 'たまねぎ', vi: 'hành tây' },
+      { id: '8-2', kanji: 'ニンジン', kana: 'にんじん', vi: 'cà rốt' },
+      { id: '8-3', kanji: 'ネギ', kana: 'ねぎ', vi: 'hành lá' },
+      { id: '8-4', kanji: '半分', kana: 'はんぶん', vi: 'một nửa' },
+      { id: '8-5', kanji: 'カップ', kana: 'かっぷ', vi: 'cốc (đơn vị đo)' },
+      { id: '8-6', kanji: 'クリーム', kana: 'くりーむ', vi: 'kem' },
+      { id: '8-7', kanji: 'ゼリー', kana: 'ぜりー', vi: 'thạch' },
+      { id: '8-8', kanji: 'ソース', kana: 'そーす', vi: 'nước sốt' },
+      { id: '8-9', kanji: 'パスタのソースを作る', kana: 'ぱすたのそーすをつくる', vi: 'làm nước sốt mì ý' },
+      { id: '8-10', kanji: 'パスタ', kana: 'ぱすた', vi: 'mì ý' }
+    ]
+  },
+  {
+    id: 9,
+    title: "Nhóm 9 (Bài 7)",
+    words: [
+      { id: '9-1', kanji: '味', kana: 'あじ', vi: 'vị' },
+      { id: '9-2', kanji: 'はちみつ', kana: 'はちみつ', vi: 'mật ong' },
+      { id: '9-3', kanji: 'みそ汁', kana: 'みそしる', vi: 'súp miso' },
+      { id: '9-4', kanji: '火', kana: 'ひ', vi: 'lửa' },
+      { id: '9-5', kanji: '強火', kana: 'つよび', vi: 'lửa lớn' },
+      { id: '9-6', kanji: '弱火', kana: 'よわび', vi: 'lửa nhỏ' },
+      { id: '9-7', kanji: 'ルー', kana: 'るー', vi: 'viên gia vị cà ri' },
+      { id: '9-8', kanji: 'グラム', kana: 'ぐらむ', vi: 'gram' },
+      { id: '9-9', kanji: 'できあがり', kana: 'できあがり', vi: 'hoàn thành' },
+      { id: '9-10', kanji: 'むく', kana: 'むく', vi: 'bóc, gọt (vỏ)' }
+    ]
+  },
+  {
+    id: 10,
+    title: "Nhóm 10 (Bài 7)",
+    words: [
+      { id: '10-1', kanji: '焼く', kana: 'やく', vi: 'nướng, rán' },
+      { id: '10-2', kanji: '沸かす', kana: 'わかす', vi: 'đun sôi' },
+      { id: '10-3', kanji: '冷やす', kana: 'ひやす', vi: 'làm lạnh' },
+      { id: '10-4', kanji: '煮る', kana: 'にる', vi: 'ninh, kho' },
+      { id: '10-5', kanji: 'ゆでる', kana: 'ゆでる', vi: 'luộc' },
+      { id: '10-6', kanji: '変わる', kana: 'かわる', vi: 'thay đổi' },
+      { id: '10-7', kanji: '沸騰・する', kana: 'ふっとう・する', vi: 'sôi' },
+      { id: '10-8', kanji: '炒める', kana: 'いためる', vi: 'xào' },
+      { id: '10-9', kanji: '厚い', kana: 'あつい', vi: 'dày' },
+      { id: '10-10', kanji: '薄い', kana: 'うすい', vi: 'mỏng, nhạt' }
+    ]
+  },
+  {
+    id: 11,
+    title: "Nhóm 11 (Bài 7)",
+    words: [
+      { id: '11-1', kanji: '薄く切ります', kana: 'うすくきります', vi: 'cắt mỏng' },
+      { id: '11-2', kanji: 'この料理は味が薄いです', kana: 'このりょうりはあじがうすいです', vi: 'món này vị nhạt' },
+      { id: '11-3', kanji: '濃い', kana: 'こい', vi: 'đậm' },
+      { id: '11-4', kanji: '細かい', kana: 'こまかい', vi: 'nhỏ, vụn' },
+      { id: '11-5', kanji: '細い', kana: 'ほそい', vi: 'thon, nhỏ' },
+      { id: '11-6', kanji: '弱い', kana: 'よわい', vi: 'yếu' },
+      { id: '11-7', kanji: 'まず', kana: 'まず', vi: 'đầu tiên' },
+      { id: '11-8', kanji: '次に', kana: 'つぎに', vi: 'tiếp theo' },
+      { id: '11-9', kanji: '最後に', kana: 'さいごに', vi: 'cuối cùng' }
+    ]
   }
 ];
 
@@ -96,6 +191,7 @@ function shuffleArray(array) {
 
 // State app
 let appState = {
+  activeLesson: 5,
   activeGroup: 1,
   activeTab: 'flashcards',
   flashcards: {
@@ -395,12 +491,54 @@ function render() {
   }
 }
 
+// Switch lesson tab
+function switchLesson(lessonId) {
+  appState.activeLesson = lessonId;
+  
+  // Update lesson tab buttons
+  document.querySelectorAll('.tab-btn[data-lesson]').forEach(btn => {
+    btn.classList.remove('active');
+    if (parseInt(btn.dataset.lesson) === lessonId) {
+      btn.classList.add('active');
+    }
+  });
+
+  // Update title
+  const titleEl = document.querySelector('header h1');
+  if (titleEl) {
+    titleEl.textContent = `Từ vựng bài ${lessonId}`;
+  }
+
+  // Determine first group of the lesson
+  const firstGroupId = lessonId === 5 ? 1 : 6;
+  
+  // Re-render group buttons FIRST so they exist when switchGroup runs
+  // But we need to update activeGroup before calling renderGroupButtons 
+  // if we rely on it for 'active' class in HTML generation.
+  // Actually, renderGroupButtons uses appState.activeGroup to set 'active' class.
+  // So set activeGroup first.
+  appState.activeGroup = firstGroupId;
+  renderGroupButtons();
+  
+  // Now call switchGroup to handle the rest (resetting matching game, etc)
+  switchGroup(firstGroupId);
+}
+
 // Render group buttons
 function renderGroupButtons() {
   const container = document.getElementById('group-buttons');
   let html = '';
   
-  vocabularyData.forEach(group => {
+  // Filter groups based on activeLesson
+  const groups = vocabularyData.filter(g => {
+    const isLesson5 = g.id >= 1 && g.id <= 5;
+    const isLesson7 = g.id >= 6;
+    return appState.activeLesson === 5 ? isLesson5 : isLesson7;
+  });
+
+  groups.forEach(group => {
+    // Simplify title display if needed, e.g., remove "(Bài 7)" for cleaner look if implied
+    // keeping full title for now as user asked "similar to existing"
     html += `
       <button class="group-btn ${appState.activeGroup === group.id ? 'active' : ''}" 
               data-group="${group.id}" 

@@ -84,7 +84,7 @@ const vocabularyData = [
   },
   {
     id: 6,
-    title: "Nhóm 1 (Bài 7)",
+    title: "Nhóm 1",
     words: [
       { id: '6-1', kanji: '会議', kana: 'かいぎ', vi: 'buổi họp, hội nghị' },
       { id: '6-2', kanji: '課長', kana: 'かちょう', vi: 'trưởng nhóm' },
@@ -100,7 +100,7 @@ const vocabularyData = [
   },
   {
     id: 7,
-    title: "Nhóm 2 (Bài 7)",
+    title: "Nhóm 2",
     words: [
       { id: '7-1', kanji: 'ご覧になる', kana: 'ごらんになる', vi: 'nhìn, xem (kính ngữ)' },
       { id: '7-2', kanji: 'なさる', kana: 'なさる', vi: 'làm (kính ngữ)' },
@@ -116,7 +116,7 @@ const vocabularyData = [
   },
   {
     id: 8,
-    title: "Nhóm 3 (Bài 7)",
+    title: "Nhóm 3",
     words: [
       { id: '8-1', kanji: 'タマネギ', kana: 'たまねぎ', vi: 'hành tây' },
       { id: '8-2', kanji: 'ニンジン', kana: 'にんじん', vi: 'cà rốt' },
@@ -132,7 +132,7 @@ const vocabularyData = [
   },
   {
     id: 9,
-    title: "Nhóm 4 (Bài 7)",
+    title: "Nhóm 4",
     words: [
       { id: '9-1', kanji: '味', kana: 'あじ', vi: 'vị' },
       { id: '9-2', kanji: 'はちみつ', kana: 'はちみつ', vi: 'mật ong' },
@@ -148,7 +148,7 @@ const vocabularyData = [
   },
   {
     id: 10,
-    title: "Nhóm 5 (Bài 7)",
+    title: "Nhóm 5",
     words: [
       { id: '10-1', kanji: '焼く', kana: 'やく', vi: 'nướng, rán' },
       { id: '10-2', kanji: '沸かす', kana: 'わかす', vi: 'đun sôi' },
@@ -164,7 +164,7 @@ const vocabularyData = [
   },
   {
     id: 11,
-    title: "Nhóm 6 (Bài 7)",
+    title: "Nhóm 6",
     words: [
       { id: '11-1', kanji: '薄く切ります', kana: 'うすくきります', vi: 'cắt mỏng' },
       { id: '11-2', kanji: 'この料理は味が薄いです', kana: 'このりょうりはあじがうすいです', vi: 'món này vị nhạt' },
@@ -179,7 +179,7 @@ const vocabularyData = [
   },
   {
     id: 12,
-    title: "Nhóm 1 (Bài 11)",
+    title: "Nhóm 1",
     words: [
       { id: '12-1', kanji: '彼', kana: 'かれ', vi: 'anh ấy' },
       { id: '12-2', kanji: '彼女', kana: 'かのじょ', vi: 'cô ấy' },
@@ -195,7 +195,7 @@ const vocabularyData = [
   },
   {
     id: 13,
-    title: "Nhóm 2 (Bài 11)",
+    title: "Nhóm 2",
     words: [
       { id: '13-1', kanji: '持つ', kana: 'もつ', vi: 'có, mang' },
       { id: '13-2', kanji: '節約する', kana: 'せつやくする', vi: 'tiết kiệm' },
@@ -211,7 +211,7 @@ const vocabularyData = [
   },
   {
     id: 14,
-    title: "Nhóm 3 (Bài 11)",
+    title: "Nhóm 3",
     words: [
       { id: '14-1', kanji: 'あんまり', kana: 'あんまり', vi: 'không…lắm' },
       { id: '14-2', kanji: 'だいたい', kana: 'だいたい', vi: 'đại khái' },

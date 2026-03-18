@@ -84,7 +84,7 @@ const vocabularyData = [
   },
   {
     id: 6,
-    title: "Nhóm 6 (Bài 7)",
+    title: "Nhóm 1 (Bài 7)",
     words: [
       { id: '6-1', kanji: '会議', kana: 'かいぎ', vi: 'buổi họp, hội nghị' },
       { id: '6-2', kanji: '課長', kana: 'かちょう', vi: 'trưởng nhóm' },
@@ -100,7 +100,7 @@ const vocabularyData = [
   },
   {
     id: 7,
-    title: "Nhóm 7 (Bài 7)",
+    title: "Nhóm 2 (Bài 7)",
     words: [
       { id: '7-1', kanji: 'ご覧になる', kana: 'ごらんになる', vi: 'nhìn, xem (kính ngữ)' },
       { id: '7-2', kanji: 'なさる', kana: 'なさる', vi: 'làm (kính ngữ)' },
@@ -116,7 +116,7 @@ const vocabularyData = [
   },
   {
     id: 8,
-    title: "Nhóm 8 (Bài 7)",
+    title: "Nhóm 3 (Bài 7)",
     words: [
       { id: '8-1', kanji: 'タマネギ', kana: 'たまねぎ', vi: 'hành tây' },
       { id: '8-2', kanji: 'ニンジン', kana: 'にんじん', vi: 'cà rốt' },
@@ -132,7 +132,7 @@ const vocabularyData = [
   },
   {
     id: 9,
-    title: "Nhóm 9 (Bài 7)",
+    title: "Nhóm 4 (Bài 7)",
     words: [
       { id: '9-1', kanji: '味', kana: 'あじ', vi: 'vị' },
       { id: '9-2', kanji: 'はちみつ', kana: 'はちみつ', vi: 'mật ong' },
@@ -148,7 +148,7 @@ const vocabularyData = [
   },
   {
     id: 10,
-    title: "Nhóm 10 (Bài 7)",
+    title: "Nhóm 5 (Bài 7)",
     words: [
       { id: '10-1', kanji: '焼く', kana: 'やく', vi: 'nướng, rán' },
       { id: '10-2', kanji: '沸かす', kana: 'わかす', vi: 'đun sôi' },
@@ -164,7 +164,7 @@ const vocabularyData = [
   },
   {
     id: 11,
-    title: "Nhóm 11 (Bài 7)",
+    title: "Nhóm 6 (Bài 7)",
     words: [
       { id: '11-1', kanji: '薄く切ります', kana: 'うすくきります', vi: 'cắt mỏng' },
       { id: '11-2', kanji: 'この料理は味が薄いです', kana: 'このりょうりはあじがうすいです', vi: 'món này vị nhạt' },
@@ -175,6 +175,55 @@ const vocabularyData = [
       { id: '11-7', kanji: 'まず', kana: 'まず', vi: 'đầu tiên' },
       { id: '11-8', kanji: '次に', kana: 'つぎに', vi: 'tiếp theo' },
       { id: '11-9', kanji: '最後に', kana: 'さいごに', vi: 'cuối cùng' }
+    ]
+  },
+  {
+    id: 12,
+    title: "Nhóm 1 (Bài 11)",
+    words: [
+      { id: '12-1', kanji: '彼', kana: 'かれ', vi: 'anh ấy' },
+      { id: '12-2', kanji: '彼女', kana: 'かのじょ', vi: 'cô ấy' },
+      { id: '12-3', kanji: 'こと', kana: 'こと', vi: 'việc' },
+      { id: '12-4', kanji: '興味', kana: 'きょうみ', vi: 'sở thích, quan tâm' },
+      { id: '12-5', kanji: 'ボランティア', kana: 'ぼらんてぃあ', vi: 'tình nguyện' },
+      { id: '12-6', kanji: '物価', kana: 'ぶっか', vi: 'giá cả' },
+      { id: '12-7', kanji: '敬語', kana: 'けいご', vi: 'kính ngữ' },
+      { id: '12-8', kanji: '文化', kana: 'ぶんか', vi: 'văn hóa' },
+      { id: '12-9', kanji: '違い', kana: 'ちがい', vi: 'sự khác nhau' },
+      { id: '12-10', kanji: '無理', kana: 'むり', vi: 'không thể / quá sức' }
+    ]
+  },
+  {
+    id: 13,
+    title: "Nhóm 2 (Bài 11)",
+    words: [
+      { id: '13-1', kanji: '持つ', kana: 'もつ', vi: 'có, mang' },
+      { id: '13-2', kanji: '節約する', kana: 'せつやくする', vi: 'tiết kiệm' },
+      { id: '13-3', kanji: '外食する', kana: 'がいしょくする', vi: 'ăn ngoài' },
+      { id: '13-4', kanji: 'ダイエットする', kana: 'だいえっとする', vi: 'ăn kiêng' },
+      { id: '13-5', kanji: '太る', kana: 'ふとる', vi: 'béo lên' },
+      { id: '13-6', kanji: '折れる', kana: 'おれる', vi: 'gãy' },
+      { id: '13-7', kanji: '故障する', kana: 'こしょうする', vi: 'hỏng' },
+      { id: '13-8', kanji: '学ぶ', kana: 'まなぶ', vi: 'học' },
+      { id: '13-9', kanji: '育てる', kana: 'そだてる', vi: 'nuôi dạy' },
+      { id: '13-10', kanji: '研究する', kana: 'けんきゅうする', vi: 'nghiên cứu' }
+    ]
+  },
+  {
+    id: 14,
+    title: "Nhóm 3 (Bài 11)",
+    words: [
+      { id: '14-1', kanji: 'あんまり', kana: 'あんまり', vi: 'không…lắm' },
+      { id: '14-2', kanji: 'だいたい', kana: 'だいたい', vi: 'đại khái' },
+      { id: '14-3', kanji: '駅前', kana: 'えきまえ', vi: 'trước ga' },
+      { id: '14-4', kanji: '具合', kana: 'ぐあい', vi: 'tình trạng' },
+      { id: '14-5', kanji: '区役所', kana: 'くやくしょ', vi: 'ủy ban quận' },
+      { id: '14-6', kanji: '今夜', kana: 'こんや', vi: 'tối nay' },
+      { id: '14-7', kanji: '出張する', kana: 'しゅっちょうする', vi: 'đi công tác' },
+      { id: '14-8', kanji: '打つ', kana: 'うつ', vi: 'đánh' },
+      { id: '14-9', kanji: '回る', kana: 'まわる', vi: 'đi vòng' },
+      { id: '14-10', kanji: '投げる', kana: 'なげる', vi: 'ném' },
+      { id: '14-11', kanji: 'あきらめる', kana: 'あきらめる', vi: 'từ bỏ' }
     ]
   }
 ];
@@ -510,7 +559,10 @@ function switchLesson(lessonId) {
   }
 
   // Determine first group of the lesson
-  const firstGroupId = lessonId === 5 ? 1 : 6;
+  let firstGroupId;
+  if (lessonId === 5) firstGroupId = 1;
+  else if (lessonId === 7) firstGroupId = 6;
+  else if (lessonId === 11) firstGroupId = 12;
   
   // Re-render group buttons FIRST so they exist when switchGroup runs
   // But we need to update activeGroup before calling renderGroupButtons 
@@ -531,9 +583,10 @@ function renderGroupButtons() {
   
   // Filter groups based on activeLesson
   const groups = vocabularyData.filter(g => {
-    const isLesson5 = g.id >= 1 && g.id <= 5;
-    const isLesson7 = g.id >= 6;
-    return appState.activeLesson === 5 ? isLesson5 : isLesson7;
+    if (appState.activeLesson === 5) return g.id >= 1 && g.id <= 5;
+    if (appState.activeLesson === 7) return g.id >= 6 && g.id <= 11;
+    if (appState.activeLesson === 11) return g.id >= 12;
+    return false;
   });
 
   groups.forEach(group => {

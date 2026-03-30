@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Từ vựng bài 5</title>
+  <title>Từ vựng bài 1</title>
   <style>
     * {
       margin: 0;
@@ -120,6 +120,17 @@
       background-color: #f0f9ff;
       color: #2563eb;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #lesson-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    #lesson-buttons .tab-btn {
+      padding: 10px 16px;
     }
 
     .icon {
@@ -317,11 +328,6 @@
       color: #bfdbfe !important; /* text-blue-200 */
     }
 
-    /* Cột tiếng Nhật font to hơn một chút giống bản gốc */
-    #jp-words .matching-btn {
-        /* font-size handled by inner elements now */
-    }
-
     .matching-btn:hover:not(:disabled):not(.selected):not(.error) {
       border-color: #60a5fa; /* hover:border-blue-400 */
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* hover:shadow-md */
@@ -396,23 +402,25 @@
 <body>
   <div class="container">
     <header>
-      <h1>Từ vựng bài 5</h1>
+      <h1>Từ vựng bài 1</h1>
       <p class="subtitle">Vibe coded by コア</p>
     </header>
 
-    <div class="tab-container" style="margin-bottom: 16px;">
+    <div class="tab-container" style="margin-bottom: 24px;">
       <div class="tab-buttons">
-        <button class="tab-btn active" data-lesson="5" onclick="switchLesson(5)">
-          Bài 5
+        <button class="tab-btn active" data-main-tab="vocabulary" onclick="switchMainTab('vocabulary')">
+          Từ vựng
         </button>
-        <button class="tab-btn" data-lesson="7" onclick="switchLesson(7)">
-          Bài 7
+        <button class="tab-btn" data-main-tab="kanji" onclick="switchMainTab('kanji')">
+          Kanji
         </button>
-        <button class="tab-btn" data-lesson="11" onclick="switchLesson(11)">
-          Bài 11
-        </button>
-
       </div>
+    </div>
+
+    <!-- Vocabulary Content -->
+    <div id="vocabulary-content">
+    <div class="tab-container" style="margin-bottom: 16px;">
+      <div class="tab-buttons" id="lesson-buttons"></div>
     </div>
 
     <div class="group-buttons" id="group-buttons"></div>
@@ -436,6 +444,15 @@
     </div>
 
     <main id="main-content"></main>
+    </div>
+
+    <!-- Kanji Content -->
+    <div id="kanji-content" style="display: none; padding: 32px; text-align: center;">
+      <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 8px; color: #374151;">Kanji</h3>
+        <p style="color: #6b7280;">Học Kanji chưa khả dụng.</p>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
